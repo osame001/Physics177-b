@@ -24,12 +24,6 @@ for i in range ( 101):
         y[i] = i * dx
         phi[i , j] = 100/(4 * e * math.pi) * ( ( (x[j]-x0p*dx)**2 + ( y[i]+ 10**-2 )**2  )**-0.5 - ( (x[j] - x0n*dx )**2 + (y[i] + 10**-2 )**2  )**-0.5 )
         
-#print phi
-
-#Potential = np.column_stack( ( x , y , phi) )
-#np.savetxt("potential array" , Potential)
-
-#data = np.loadtxt("potential array" , float)
 imshow(phi , origin = "lower")
 show()
 
@@ -42,12 +36,7 @@ for i in range (100):
         E_x[i , j] = (phi[i+1,j]-phi[i,j])/dx
         E_y[i ,j] = ( phi[i , j+1]- phi[i , j])/dx
         
-#for i in range (101):
-#    for j in range(101):
-#        E[i , j] = ( E_x[i , j]**2 +  E_y[i, j]**2)**0.5
-#Electricfield = np.column_stack( (x , y , E))
 
-#imshow(E , origin = "lower")
 quiver(x,y,E_x,E_y)
 show()
  
